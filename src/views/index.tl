@@ -4,6 +4,6 @@
   <title>speakeasy demo</title>
 </head>
 <body>
-  speakeasy demo
+  speakeasy demo ${d.sport}
 </body>
 </html>
