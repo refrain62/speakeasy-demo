@@ -51,7 +51,7 @@
   <script>
     // トークンの再発行
     let updateToken = function() {
-      let secretVal = document.getElementById('secret').innerHTML;
+      let secretVal = document.getElementById('secret').textContent;
       console.log(secretVal);
 
       // トークンを取得する
@@ -63,7 +63,7 @@
         .then((response) => response.text())
         .then((data) => {
           console.log(data);
-          document.getElementById('token').innerHTML = data;
+          document.getElementById('token').textContent = data;
           })
         .catch((error) => console.log(error))
         ;
@@ -71,7 +71,7 @@
 
     // 認証ボタン押下時
     let handleClick = function() {
-      let secretVal = document.getElementById('secret').innerHTML;
+      let secretVal = document.getElementById('secret').textContent;
       let tokenVal = document.getElementById('token_input').value;
 
       // コード確認
@@ -84,7 +84,7 @@
         .then((data) => {
           // 結果
           console.log(data);
-          document.getElementById('verify_result').innerHTML = data;
+          document.getElementById('verify_result').textContent = data;
           })
         .catch((error) => console.log(error))
         ;
@@ -109,7 +109,7 @@
           secsToNext = 60 - sec;
         }
 
-        document.getElementById('update').innerHTML = 'Updating in ' + secsToNext + ' sec...';
+        document.getElementById('update').textContent = 'Updating in ' + secsToNext + ' sec...';
       }
     }
 
